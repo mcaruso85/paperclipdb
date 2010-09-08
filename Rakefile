@@ -21,3 +21,17 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "paperclipdb"
+    gemspec.summary = "Database storage support for paperclip file attachment plugin."
+    gemspec.description = "Database storage support for paperclip file attachment plugin"
+    gemspec.email = "caruso.martin@gmail.com"
+    gemspec.homepage = "http://github.com/mcaruso85/paperclipdb"
+    gemspec.authors = ["Martin Caruso"]
+  end
+rescue LoadError
+  puts "Jeweler not available. Install it with: gem install jeweler"
+end
