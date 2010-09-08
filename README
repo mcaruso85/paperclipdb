@@ -1,0 +1,23 @@
+Paperclipdb
+===========
+
+Database storage support for paperclip file attachment plugin.
+
+Install
+=======
+
+gem install paperclipdb
+rake paperclipdb:setup
+rake db:migrate
+
+Usage
+=======
+
+class ModelWithAttach < ActiveRecord::Base
+	has_attached_file :attach, 
+					  :storage => "database" , 
+					  :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
+					  :url => "/:class/:attachment/:id/:style/:basename.:extension"
+end
+
+Copyright (c) 2010 [Martin Caruso], released under the MIT license
